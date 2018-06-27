@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camera exposure tool</title>
+    <link rel="stylesheet" href="resources/css/style.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="sliders-container">
+
+            <!--   shutter speed slider   -->
+            <div>
+                <div class="slider">
+                    <h4>SHUTTER SPEED: <span id="shutterSpeedValue">1s</span></h4>
+                    <input type="range" name="rangeInput" min="0" max="60" value="0" step="10" class="slider shutterSpeedSlider" id="myRange" onchange="updateShutterSpeed(this.value);">
+                </div>
+            </div>
+
+            <!--   ISO slider   -->
+            <div>
+                <div class="slider">
+                    <h4>ISO: <span id="isoValue">100</span></h4>
+                    <input type="range" name="rangeInput" min="0" max="60" value="0" step="10" class="slider isoSlider" id="myRange" onchange="updateIso(this.value);">
+                </div>
+            </div>
+
+            <!--   Aperture slider   -->
+            <div>
+                <div class="slider">
+                    <h4>APERTURE: <span id="apertureValue">f2.8</span></h4>
+                    <input type="range" name="rangeInput" min="0" max="60" value="0" step="10" class="slider apertureSlider" id="myRange" onchange="updateAperture(this.value);">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="resources/js/script.js"></script>
+</body>
+
+</html>
