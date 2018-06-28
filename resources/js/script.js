@@ -4,9 +4,9 @@ var apertureValue = document.getElementById('apertureValue');
 
 var values = [0, 10, 20, 30, 40, 50, 60];
 
-var shutterSpeedInputs = ['1s', '0.5s', '1/10s', '1/60s', '1/200s', '1/800s', '1/4000s'];
+var shutterSpeedInputs = ['1s', '0.5s', '1/10s', '1/60s', '1/200s', '1/800s', '1/2000s'];
 var isoInputs = ['100', '320', '500', '1000', '6400', '12800', '25600'];
-var apertureInputs = ['f2.8', 'f3.2', 'f3.5', 'f5.6', 'f7.1', 'f11', 'f16'];
+var apertureInputs = ['f2.8', 'f3.5', 'f5.6', 'f7.1', 'f11', 'f16', 'f22'];
 
 var iso = isoInputs[0];
 var shutterSpeed = shutterSpeedInputs[0];
@@ -14,8 +14,8 @@ var aperture = apertureInputs[0];
 
 
 function updateShutterSpeed(val) {
-    for(var i = 0; i <= values.length; i++) {
-        if(val == values[i]) {
+    for (var i = 0; i <= values.length; i++) {
+        if (val == values[i]) {
             shutterSpeedValue.innerHTML = shutterSpeedInputs[i];
             shutterSpeed = shutterSpeedValue.innerHTML;
         };
@@ -25,8 +25,8 @@ function updateShutterSpeed(val) {
 
 
 function updateIso(val) {
-    for(var i = 0; i <= values.length; i++) {
-        if(val == values[i]) {
+    for (var i = 0; i <= values.length; i++) {
+        if (val == values[i]) {
             isoValue.innerHTML = isoInputs[i];
             iso = isoValue.innerHTML;
         };
@@ -36,8 +36,8 @@ function updateIso(val) {
 
 
 function updateAperture(val) {
-    for(var i = 0; i <= values.length; i++) {
-        if(val == values[i]) {
+    for (var i = 0; i <= values.length; i++) {
+        if (val == values[i]) {
             apertureValue.innerHTML = apertureInputs[i];
             aperture = apertureValue.innerHTML;
         };
@@ -45,7 +45,14 @@ function updateAperture(val) {
     changeImage()
 };
 
-function changeImage() {
-    var image = "url(resources/css/img/" + aperture + "_" + iso + "_" + shutterSpeed + ".jpg)"
-    document.body.style.backgroundImage = image;
+
+function changeImage(val) {
+    var image;
+    val = document.getElementById('myRange').value;
+    for (var i = 0; i <= values.length; i++) {
+        if (val == values[i]) {
+            image = "url(resources/css/img/" + aperture + "_" + iso + "_" + values[i] + ".jpg)"
+        }
+        document.body.style.backgroundImage = image;
+    }
 };

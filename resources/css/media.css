@@ -1,0 +1,10 @@
+@media only screen and (max-width: 992px) {
+    body {
+        font-size: 14px;
+    }
+    input[type="range"] {
+        -webkit-appearance: none;
+        width: 80%;
+        height: 10px;
+    }
+}
