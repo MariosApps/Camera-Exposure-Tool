@@ -1,3 +1,3 @@
 # Camera Exposure Tool
 
-<h3><a href="https://pampuchskrytozerca.github.io/Camera-Exposure-Tool/">DEMO</a></h3>
+<h3><a href="https://mariosapps.github.io/Camera-Exposure-Tool/">DEMO</a></h3>
